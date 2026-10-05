@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Storage Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                ☁️ <span>CloudBox</span>
+            </div>
+
+            <nav>
+                <a href="#" class="active">🏠 Dashboard</a>
+                <a href="#">📁 My Files</a>
+                <a href="#">⭐ Favorites</a>
+                <a href="#">🗑️ Trash</a>
+                <a href="#">⚙️ Settings</a>
+            </nav>
+
+            <div class="storage-box">
+                <h4>Storage</h4>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <p><span id="usedStorage">4.2</span> GB of 10 GB used</p>
+                <button>Upgrade Storage</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <h1>Cloud Dashboard</h1>
+                    <p>Manage your files securely in the cloud.</p>
+                </div>
+
+                <div class="profile">
+                    <div class="avatar">U</div>
+                    <span>User</span>
+                </div>
+            </header>
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <div class="icon blue">☁️</div>
+                    <div>
+                        <h3>10 GB</h3>
+                        <p>Total Storage</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="icon green">📁</div>
+                    <div>
+                        <h3 id="fileCount">0</h3>
+                        <p>Total Files</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="icon orange">⬆️</div>
+                    <div>
+                        <h3>2.8 GB</h3>
+                        <p>Uploaded</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="icon purple">🔒</div>
+                    <div>
+                        <h3>Secure</h3>
+                        <p>Cloud Status</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Actions -->
+            <section class="actions">
+                <div class="search-box">
+                    🔍
+                    <input type="text" id="searchInput"
+                           placeholder="Search files...">
+                </div>
+
+                <label class="upload-btn">
+                    ⬆ Upload File
+                    <input type="file" id="fileInput" hidden>
+                </label>
+            </section>
+
+            <!-- Files -->
+            <section class="files-section">
+                <div class="section-header">
+                    <h2>My Files</h2>
+                    <select id="sortFiles">
+                        <option value="name">Sort by Name</option>
+                        <option value="size">Sort by Size</option>
+                        <option value="type">Sort by Type</option>
+                    </select>
+                </div>
+
+                <div class="file-table">
+
+                    <div class="table-header">
+                        <span>Name</span>
+                        <span>Type</span>
+                        <span>Size</span>
+                        <span>Action</span>
+                    </div>
+
+                    <div id="fileList"></div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
